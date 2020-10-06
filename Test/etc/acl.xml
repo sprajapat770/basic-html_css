@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Suraj_Test::menu" title="Custom Menu" sortOrder="10" >
+                    <resource id="Suraj_Test::action_submenu" title="Action" sortOrder="10" >
+                        <resource id="Suraj_Test::create" title="Create" sortOrder="50" />
+                        <resource id="Suraj_Test::delete" title="Delete" sortOrder="100" />
+                        <resource id="Suraj_Test::view" title="View" sortOrder="150">
+                            <resource id="Suraj_Test::view_additional" title="View Additional Information" sortOrder="10" />
+                        </resource>
+                    </resource>
+                    <resource id="Suraj_Test::greeting_submenu" title="Greeting" sortOrder="50" >
+                        <resource id="Suraj_Test::greeting" title="Hello" sortOrder="10" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

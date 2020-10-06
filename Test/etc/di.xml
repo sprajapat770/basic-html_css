@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Suraj\Test\Example\Dependency" shared="true"/>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="wholesale_catalog_product" type="Suraj\Test\Plugin\CustomerGroupPlugin"/>
+    </type>
+    <type name="\Magento\Checkout\Model\Cart">
+        <plugin name="checkout_product_plugin" type="Suraj\Test\Plugin\AddCartPlugin" disabled="false" />
+    </type>
+
+</config>

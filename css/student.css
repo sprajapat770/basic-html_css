@@ -1,0 +1,81 @@
+table{
+    width: 100%;
+}
+table > tr:first-child{
+    width: 10px;
+}
+caption {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+table, th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 10px auto 10px auto;
+}
+
+.buttons{
+    margin:20px auto auto auto;
+}
+
+/*.popup-overlay {
+    !*Hides pop-up when there is no "active" class*!
+    visibility: hidden;
+    !* position: absolute;*!
+    background: #ffffff;
+    width: 60%;
+    left: 25%;
+}
+
+.popup-overlay.active {
+    !*displays pop-up when "active" class is present*!
+    visibility: visible;
+    text-align: center;
+}*/
+
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.popup-overlay.active {
+    display: block;
+    text-align: center;
+}
+
+/* Modal Content */
+.popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/*
+
+!* The Close Button *!
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}*/

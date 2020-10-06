@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://lab.alexcican.com/set_cookies/cookie.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/student.css">
+    <script type="text/javascript" src="js/student.js"></script>
+</head>
+<body >
+    <div>
+        <h1>Student Management</h1>
+    </div>
+    <div class="table-top">
+        <table class="table" id="table-student-record">
+            <caption>Student's Record</caption>
+            <thead class="tableset thead">
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Email Id</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="tableset tbody" id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <div class="buttons">
+        <button class="action primary insert">Insert New Record</button>
+    </div>
+
+    <div class="popup-overlay insert-content">
+        <div class="popup-content">
+                <form class="form form-login" method="post" onSubmit="return false;" enctype="multipart/form-data" name="" onsubmit="" id="insform" method="post">
+                    <fieldset class="fieldset" >
+                        <div class="top">
+                            <div class="field roll_no">
+                                <label for="iroll_no"></label><input class="input-text" id="iroll_no" name="iroll_no" placeholder="Roll Number" type="number" required>
+                            </div>
+                            <div class="field fame">
+                                <label for="ifname"></label>
+                                <input class="input-text" id="ifname" name="ifname" placeholder="First Name" type="text" required>
+                            </div>
+                            <div class="field email">
+                                <label for="iemail"></label><input class="input-text" id="iemail" name="iemail" placeholder="Email Id" type="email" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            <button class="insert" id="insConfirm" >Insert</button>
+            <button class="cancel" id="insCancel">Cancel</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay update-content">
+        <div class="popup-content">
+            <form class="form form-login" method="post" onSubmit="return false;" enctype="multipart/form-data" name="uform" id="uform" onsubmit="" method="post">
+                <fieldset class="fieldset" >
+                    <div class="top">
+                        <div class="field roll_no">
+                            <label for="uroll_no"></label><input class="input-text" name="uroll_no" id="uroll_no" placeholder="Roll Number" type="number" required>
+                        </div>
+                        <div class="field fame">
+                            <label for="ufname"></label><input class="input-text" name="ufname" id="ufname" placeholder="First Name" type="text" required>
+                        </div>
+                        <div class="field email">
+                            <label for="uemail"></label><input class="input-text" name="uemail" id="uemail" placeholder="Email Id" type="email">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        <button class="action update" id="upConfirm">Update</button>
+        <button class="action cancel" id="upCancel">Cancel</button>
+        </div>
+    </div>
+    <div class="popup-overlay delete-content">
+        <div class="popup-content">
+            <button class="action update" id="delConfirm">Delete</button>
+            <button class="action cancel" id="delCancel">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+.form{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,0.2);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.fieldset{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.fieldset .top {
+    margin: 30px 20px 0 20px;
+    padding: 0;
+    background-color: white;
+}
+
+.fieldset .bottom {
+    border-top: 1px black;
+    padding: 25px;
+    background: #f1f1f1;
+    margin: 20px 0 0 0;
+}
+
+.fieldset .field {
+    margin-top: 10px;
+}
+
+.form .field .input-text{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form .field.name #fname{
+    width: 40%;
+    display: inline-block;
+}
+
+.form .field.name #lname{
+    margin-left: 10px;
+    width: 40%;
+}
+
+.form .field .action.primary{
+    border: none;
+    background-color: #04D0FF;
+    padding: 10px 20px;
+    color: white;
+    width: 60%;
+    border-radius: 6px;
+}
+
+.form .field .action{
+    text-decoration: none;
+    color: #04b0ff;
+    width: 100%;
+}

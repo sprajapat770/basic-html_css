@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>User Login Form</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://lab.alexcican.com/set_cookies/cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function (){
+            if ($.cookie('loginId') === "" || $.cookie('loginId') == null ){
+
+            }else {
+                let loginId = $.cookie('loginId');
+                let pass = $.cookie('pass');
+                let $form = $('<form/>').append(
+                    $('<input/>', {name: 'loginId'}).val(loginId),
+                    $('<input/>', {name: 'pass'}).val(pass)
+                );
+                getLoginCreds(loginId,pass,$form);
+            }
+        });
+
+        function getLoginCreds(loginId,pass,$form) {
+          $.ajax({
+              type: 'POST',
+              url: 'api2test.php',
+              async:false,
+              contentType: 'application/x-www-form-urlencoded',
+              data: $form.serialize(),
+              //data: $( this ).serialize(),
+              success: function(data) {
+                  console.log(data);
+                  try {
+                      var res = JSON.parse(data);
+                      var data = res.data;
+                      if (data.id != null && res.status=="success"){
+                          window.location.replace("http://d890a0cac6.nxcli.net/suraj/profile.html");
+                      }else {
+                          alert(data);
+                      }
+                  }catch (e){
+                      alert(e);
+                  }
+              },error:function (){
+                  alert("failed");
+              }
+          });
+
+      }
+        $(document).ready(function() {
+            $("form").on("submit", function(event) {
+                loginId = $("#loginId").val();
+                pass = $("#pass").val();
+                if (loginId!=="" && pass !=="") {
+                    $.cookie('loginId', loginId, {expires: 7, path: '/'});
+                    $.cookie('pass', pass, {expires: 7, path: '/'});
+                    let form = $(this);
+                    getLoginCreds(loginId,pass,form);
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="customstyle.css">
+</head>
+<body>
+<h1>User Login Form</h1>
+<form class="form form-login" method="post" onSubmit="return false;" enctype="multipart/form-data" name="loginFrom" onsubmit="" method="post">
+    <fieldset class="fieldset" >
+        <div class="top">
+            <div class="field logo">
+                <img src="userlogo.jpg" alt="login logo">
+            </div>
+            <div class="field login">
+                <input class="input-text" id="loginId" name="loginId" placeholder="login" type="text" required>
+            </div>
+            <div class="field pass">
+                <input class="input-text" id="pass" name="pass" placeholder="password" type="password" required>
+            </div>
+            <div class="field submit">
+                <button class="action primary" type="submit" id="btnsubmit" >LOG IN</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="field forgotpass" id="forgorpass"><a class="action" href="#">Forgot Password?</a></div>
+        </div>
+    </fieldset>
+</form>
+</body>

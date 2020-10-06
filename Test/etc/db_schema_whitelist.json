@@ -1,0 +1,30 @@
+{
+    "suraj_brand_example": {
+        "column": {
+            "id": true,
+            "name": true,
+            "description": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SURAJ_BRAND_EXAMPLE_NAME": true
+        }
+    },
+    "suraj_brands": {
+        "column": {
+            "id": true,
+            "name": true,
+            "description": true,
+            "content": true,
+            "sales_orders": true,
+            "sales": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SURAJ_BRANDS_NAME": true
+        },
+        "index": {
+            "SURAJ_BRANDS_CONTENT": true
+        }
+    }
+}

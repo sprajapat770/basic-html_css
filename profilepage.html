@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://lab.alexcican.com/set_cookies/cookie.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            if (($.cookie('loginId')) === "" || ($.cookie('loginId')) ===null ){
+                window.location.replace("http://d890a0cac6.nxcli.net/suraj/loginpage.html");
+            }
+        });
+    </script>
+</head>
+<body >
+<div>
+    <h1>Welcome To Magento360</h1>
+    <p>loginId : <span id="ploginId"></span></p>
+    <!--<p>password : <span id="ppass"></span></p>-->
+    <button id="logout" onclick="userLogout()">Logout</button>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        let cookieLogin=  $.cookie('loginId');
+        //let cookiePass=  $.cookie('pass');
+        $("#ploginId").text(cookieLogin);
+        //$("#ppass").text(cookiePass);
+        //alert(" "+ loginId+" "+pass+" "+cookieLogin+" "+pass);
+        $("#logout").click(function (){
+            $.removeCookie('loginId', { path: '/' });
+            $.removeCookie('pass', { path: '/' });
+            window.location.replace("http://d890a0cac6.nxcli.net/suraj/loginpage.html");
+        });
+    });
+
+</script>
+<!--<script>getProfileData();</script>-->
+</body>
+</html>

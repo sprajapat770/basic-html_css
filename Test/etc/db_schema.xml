@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="suraj_brands" onCreate="migrateDataFromAnotherTable(suraj_brand_example)" resource="default" engine="innodb" comment="Suraj Brand Example" disabled="false">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Brand ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="1000" comment="Brand Name" />
+        <column xsi:type="int" name="content" nullable="true" comment="Brand Description"/>
+        <column xsi:type="varchar" name="sales" length="255" nullable="true" comment="Sales Description"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="SURAJ_BRAND_EXAMPLE_NAME">
+            <column name="name"/>
+        </constraint>
+        <index referenceId="SURAJ_BRANDS_CONTENT" indexType="btree">
+            <column name="content"/>
+        </index>
+    </table>
+  </schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Suraj_Test::menu" title="Custom Menu" module="Suraj_Test" sortOrder="10" resource="Suraj_Test::menu"/>
+        <add id="Suraj_Test::action_submenu" title="Action" module="Suraj_Test" sortOrder="10" parent="Suraj_Test::menu"  resource="Suraj_Test::action_submenu"/>
+        <add id="Suraj_Test::create" title="Create" module="Suraj_Test" sortOrder="10" parent="Suraj_Test::action_submenu"  resource="Suraj_Test::create"/>
+        <add id="Suraj_Test::delete" title="Delete" module="Suraj_Test" sortOrder="20" parent="Suraj_Test::action_submenu" resource="Suraj_Test::delete"/>
+        <add id="Suraj_Test::view" title="View" module="Suraj_Test" sortOrder="30" parent="Suraj_Test::action_submenu" resource="Suraj_Test::view"/>
+        <add id="Suraj_Test::greeting_submenu" title="Greeting" module="Suraj_Test" sortOrder="30" parent="Suraj_Test::menu" resource="Suraj_Test::greeting_submenu"/>
+        <add id="Suraj_Test::greeting" title="Hello" module="Suraj_Test" sortOrder="30" parent="Suraj_Test::greeting_submenu" resource="Suraj_Test::greeting"/>
+    </menu>
+</config>

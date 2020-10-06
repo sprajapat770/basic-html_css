@@ -1,0 +1,56 @@
+.form{
+    border-radius: 10px;
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,0.2);
+    padding: 20px 0 0 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fieldset{
+    margin: 0 0;
+    padding: 0;
+    border: none;
+}
+
+.fieldset .top {
+    width: 100%;
+    margin: auto 0;
+    padding: 0;
+    background-color: white;
+}
+
+.fieldset .bottom {
+    border-top: black;
+    padding: 25px 0;
+    background: #f1f1f1;
+    margin-top: 21px;
+    width: 100%;
+}
+
+.fieldset .field {
+    margin-top: 10px;
+}
+.form .field .input-text{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #f1f1f1;
+}
+
+.form .field .action.primary{
+    border: none;
+    background-color: #04D0FF;
+    padding: 10px 20px;
+    color: white;
+    width: 60%;
+    border-radius: 6px;
+}
+
+.form .field .action{
+    text-decoration: none;
+    color: #04b0ff;
+}
